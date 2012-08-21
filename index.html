@@ -1,0 +1,50 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <title>Add Ingredients</title>
+    <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+    <script src="ingredient.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+    <script src="js/jquery-1.8.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Add Ingredient:</h2>
+      <div ng-controller="ingredientCtrl" class="row">
+        <div class="span5">
+          <form ng-submit="addIngredient()">
+            <input type="text" ng-model="ingredientText" size="30" placeholder="add ingredient here">
+            <input class="btn-primary" type="submit" value="add">
+          </form>
+
+          <h4>Ingredients:</h4>
+          <div class="row">
+            <div class="span5">
+              <!--<ul class="unstyled">-->
+                <!--<li ng-repeat="ingredient in ingredients">-->
+                  <!--<div class="row">-->
+                    <!--<div class="span4">-->
+                      <!--<span>{{ingredient}}</span>-->
+                    <!--</div>-->
+                    <!--<div class="span1">-->
+                      <!--<i ng-click="removeIngredient($index)" class="icon-remove"></i>-->
+                    <!--</div>-->
+                  <!--</div>-->
+                <!--</li>-->
+              <!--</ul>-->
+              <table class="table table-striped table-condensed">
+                <tr ng-repeat="ingredient in ingredients">
+                  <td><span>{{ingredient}}</span></td>
+                  <td><i ng-click="removeIngredient($index)" class="icon-remove"></i></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
